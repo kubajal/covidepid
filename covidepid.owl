@@ -4,10 +4,10 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/kubajal/ontologies/2021/6/untitled-ontology-30> .
+@base <http://www.semanticweb.org/kubajal/ontologies/2021/6/covidepid> .
 
-<http://www.semanticweb.org/kubajal/ontologies/2021/6/untitled-ontology-30> rdf:type owl:Ontology ;
-                                                                             owl:imports <https://schema.org/> .
+<http://www.semanticweb.org/kubajal/ontologies/2021/6/covidepid> rdf:type owl:Ontology ;
+                                                                  owl:imports <https://schema.org/> .
 
 #################################################################
 #    Object Properties
