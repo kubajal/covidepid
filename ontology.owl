@@ -55,6 +55,18 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:comment "Health conditons diagnosed during hospitalization." .
 
 
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#infectedAdults
+:infectedAdults rdf:type owl:ObjectProperty ;
+                rdfs:domain :Education ;
+                rdfs:range :NumberOfInfections .
+
+
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#infectedChildren
+:infectedChildren rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Education ;
+                  rdfs:range :NumberOfInfections .
+
+
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#possibleInfectionSource
 :possibleInfectionSource rdf:type owl:ObjectProperty ;
                          rdfs:domain :Patient ;
@@ -305,6 +317,11 @@ xsd:date rdf:type rdfs:Datatype .
           rdfs:comment "Medicines according to ATC classification." .
 
 
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#MoreThanOne
+:MoreThanOne rdf:type owl:Class ;
+             rdfs:subClassOf :NumberOfInfections .
+
+
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#MusclePain
 :MusclePain rdf:type owl:Class ;
             rdfs:subClassOf :CategorizedSymptom .
@@ -323,9 +340,19 @@ xsd:date rdf:type rdfs:Datatype .
                rdfs:label "Non-cohabitant" .
 
 
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#NumberOfInfections
+:NumberOfInfections rdf:type owl:Class ;
+                    rdfs:comment "Known number of infections in places such as education, events etc." .
+
+
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#OnFootOrBike
 :OnFootOrBike rdf:type owl:Class ;
               rdfs:subClassOf :Transport .
+
+
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#One
+:One rdf:type owl:Class ;
+     rdfs:subClassOf :NumberOfInfections .
 
 
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#OtherFamilyMember
@@ -412,6 +439,11 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#Vomiting
 :Vomiting rdf:type owl:Class ;
           rdfs:subClassOf :CategorizedSymptom .
+
+
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#Zero
+:Zero rdf:type owl:Class ;
+      rdfs:subClassOf :NumberOfInfections .
 
 
 #################################################################
