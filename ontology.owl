@@ -28,6 +28,12 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#attendsSchool
+:attendsSchool rdf:type owl:ObjectProperty ;
+               rdfs:domain :Person ;
+               rdfs:range :Education .
+
+
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#hasCategorizedSymptom
 :hasCategorizedSymptom rdf:type owl:ObjectProperty ;
                        rdfs:domain :Patient ;
@@ -52,7 +58,11 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#possibleInfectionSource
 :possibleInfectionSource rdf:type owl:ObjectProperty ;
                          rdfs:domain :Patient ;
-                         rdfs:range :InfectionSource ;
+                         rdfs:range [ rdf:type owl:Class ;
+                                      owl:unionOf ( :Education
+                                                    :InfectionSource
+                                                  )
+                                    ] ;
                          rdfs:comment "Infection source suspected by the parents of the patient." .
 
 
@@ -60,6 +70,18 @@ xsd:date rdf:type rdfs:Datatype .
 :takesMedicine rdf:type owl:ObjectProperty ;
                rdfs:domain :Patient ;
                rdfs:range :Medicine .
+
+
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#to
+:to rdf:type owl:ObjectProperty ;
+    rdfs:domain :Transport ;
+    rdfs:range :Education .
+
+
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#usesTransport
+:usesTransport rdf:type owl:ObjectProperty ;
+               rdfs:domain :Person ;
+               rdfs:range :Transport .
 
 
 #################################################################
@@ -191,12 +213,16 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#Daycare
 :Daycare rdf:type owl:Class ;
-         rdfs:subClassOf :InfectionSource .
+         rdfs:subClassOf :Education .
 
 
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#Diarrhea
 :Diarrhea rdf:type owl:Class ;
           rdfs:subClassOf :CategorizedSymptom .
+
+
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#Education
+:Education rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#ExtracurricularActivity
@@ -223,6 +249,12 @@ xsd:date rdf:type rdfs:Datatype .
 :Gender rdf:type owl:Class .
 
 
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#GroupCar
+:GroupCar rdf:type owl:Class ;
+          rdfs:subClassOf :Transport ;
+          rdfs:comment "Travel by car non-Cohabitants." .
+
+
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#Headache
 :Headache rdf:type owl:Class ;
           rdfs:subClassOf :CategorizedSymptom .
@@ -238,13 +270,19 @@ xsd:date rdf:type rdfs:Datatype .
           rdfs:subClassOf :InfectionSource .
 
 
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#IndividualCar
+:IndividualCar rdf:type owl:Class ;
+               rdfs:subClassOf :Transport ;
+               rdfs:comment "Travel by car alone or with Cohabitants." .
+
+
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#InfectionSource
 :InfectionSource rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#Kindergarten
 :Kindergarten rdf:type owl:Class ;
-              rdfs:subClassOf :InfectionSource .
+              rdfs:subClassOf :Education .
 
 
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#LossOfApetite
@@ -272,11 +310,22 @@ xsd:date rdf:type rdfs:Datatype .
             rdfs:subClassOf :CategorizedSymptom .
 
 
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#NoTransport
+:NoTransport rdf:type owl:Class ;
+             rdfs:subClassOf :Transport ;
+             rdfs:comment "Implies remote work/education." .
+
+
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#NonCohabitant
 :NonCohabitant rdf:type owl:Class ;
                rdfs:subClassOf :Person ;
                rdfs:comment "A person that does not live with the patient but frequently visits the place that the patient lives in." ;
                rdfs:label "Non-cohabitant" .
+
+
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#OnFootOrBike
+:OnFootOrBike rdf:type owl:Class ;
+              rdfs:subClassOf :Transport .
 
 
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#OtherFamilyMember
@@ -306,6 +355,12 @@ xsd:date rdf:type rdfs:Datatype .
          rdfs:subClassOf :CategorizedSymptom .
 
 
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#PublicTransport
+:PublicTransport rdf:type owl:Class ;
+                 rdfs:subClassOf :Transport ;
+                 rdfs:comment "Bus or tram." .
+
+
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#Rash
 :Rash rdf:type owl:Class ;
       rdfs:subClassOf :CategorizedSymptom .
@@ -318,7 +373,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#School
 :School rdf:type owl:Class ;
-        rdfs:subClassOf :InfectionSource .
+        rdfs:subClassOf :Education .
 
 
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#SmellOrTasteDisturbance
@@ -338,6 +393,15 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#Symptom
 :Symptom rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#Train
+:Train rdf:type owl:Class ;
+       rdfs:subClassOf :Transport .
+
+
+###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#Transport
+:Transport rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/kubajal/ontologies/2021/6/ontology#UnknownGender
