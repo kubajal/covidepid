@@ -1,0 +1,1522 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://github.com/kubajal/covidepid/releases/tag/covidepid"
+     xml:base="https://github.com/kubajal/covidepid/releases/tag/covidepid"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:terms1="http://open.vocab.org/terms/">
+    <owl:Ontology rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid">
+        <owl:imports rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/"/>
+        <owl:imports rdf:resource="http://purl.bioontology.org/ontology/UATC/"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <owl:imports rdf:resource="https://github.com/kubajal/covidepid/releases/download/v0.1/relationship_extended.rdf"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/vocab/relationship/childOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/childOf"/>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/grandparentOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/grandparentOf"/>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/livesWith -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/livesWith"/>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/siblingOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/siblingOf"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#differentFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#differentFrom"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/knows -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/knows">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#covidTestResult -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#covidTestResult">
+        <rdfs:domain rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTest"/>
+        <rdfs:range rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTestResult"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#hadCovidTest -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#hadCovidTest">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTest"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#hadDiagnosis -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#hadDiagnosis">
+        <rdfs:domain rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Patient"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/A00-B99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/C00-D49"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/D50-D89"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/E00-E89"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/F01-F99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/G00-G99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/H00-H59"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/H60-H95"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/I00-I99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/J00-J99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/K00-K95"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/L00-L99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/M00-M99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/N00-N99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/O00-O9A"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/P00-P96"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/Q00-Q99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/R00-R99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/S00-T88"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/U00-U85"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/V00-Y99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/Z00-Z99"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#hadSymptom -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#hadSymptom">
+        <rdfs:domain rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Patient"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/A00-B99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/C00-D49"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/D50-D89"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/E00-E89"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/F01-F99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/G00-G99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/H00-H59"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/H60-H95"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/I00-I99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/J00-J99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/K00-K95"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/L00-L99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/M00-M99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/N00-N99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/O00-O9A"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/P00-P96"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/Q00-Q99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/R00-R99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/S00-T88"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/U00-U85"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/V00-Y99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/Z00-Z99"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#hasComorbidity -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#hasComorbidity">
+        <rdfs:domain rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Patient"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/A00-B99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/C00-D49"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/D50-D89"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/E00-E89"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/F01-F99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/G00-G99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/H00-H59"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/H60-H95"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/I00-I99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/J00-J99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/K00-K95"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/L00-L99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/M00-M99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/N00-N99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/O00-O9A"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/P00-P96"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/Q00-Q99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/R00-R99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/S00-T88"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/U00-U85"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/V00-Y99"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/Z00-Z99"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#isInhabitedBy -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#isInhabitedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#differentFrom"/>
+        <owl:inverseOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#livesIn"/>
+        <rdfs:label>Is Inhabited By</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#livesIn -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#livesIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#differentFrom"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Place"/>
+        <rdfs:label>Lives In</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#takesMedicine -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#takesMedicine">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/A"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/B"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/C"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/D"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/G"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/H"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/J"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/L"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/M"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/N"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/P"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/R"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/S"/>
+                    <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/V"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/age -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/age"/>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#covidHospitalizationLength -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#covidHospitalizationLength">
+        <rdfs:domain rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>How long was this patient hospitalized (in days).</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#covidInfectionDate -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#covidInfectionDate">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment>Earlier of the two dates:
+ - first positive COVID test date
+ - first COVID symptoms date if there was no test</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#covidInpatient -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#covidInpatient">
+        <rdfs:domain rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>True if the patient was hospitalized, false otherwise</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#covidSymptomsDays -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#covidSymptomsDays">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>For how long did the COVID-related symptoms occur.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#covidSymptomsOccured -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#covidSymptomsOccured">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#covidSymptomsStartDate -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#covidSymptomsStartDate">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#covidTestDate -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#covidTestDate">
+        <rdfs:domain rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment>Earliest negative or latest positive</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#hadChemotherapy -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#hadChemotherapy">
+        <rdfs:domain rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#hadDesaturation -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#hadDesaturation">
+        <rdfs:domain rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#hadRemdesivir -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#hadRemdesivir">
+        <rdfs:domain rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#hadSteroids -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#hadSteroids">
+        <rdfs:domain rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#livingArea -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#livingArea">
+        <rdfs:domain rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>In square meters.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/A00-B99 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/A00-B99">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/C00-D49 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/C00-D49">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/D50-D89 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/D50-D89">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/E00-E89 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/E00-E89">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/F01-F99 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/F01-F99">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/G00-G99 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/G00-G99">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/H00-H59 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/H00-H59">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/H60-H95 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/H60-H95">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/I00-I99 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/I00-I99">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/J00-J99 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/J00-J99">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/K00-K95 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/K00-K95">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/L00-L99 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/L00-L99">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/M00-M99 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/M00-M99">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/N00-N99 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/N00-N99">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/O00-O9A -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/O00-O9A">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/P00-P96 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/P00-P96">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/Q00-Q99 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/Q00-Q99">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/R00-R99 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/R00-R99">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/S00-T88 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/S00-T88">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/U00-U85 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/U00-U85">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/V00-Y99 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/V00-Y99">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/ICD10CM/Z00-Z99 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/Z00-Z99">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/A -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/A">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/B -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/B">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/C -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/C">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/D -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/D">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/G -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/G">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/H -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/H">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/J -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/J">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/L -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/L">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/M -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/M">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/N -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/N">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/P -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/P">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/R -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/R">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/S -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/S">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/UATC/V -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/UATC/V">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/Agent -->
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/Agent"/>
+    
+
+
+    <!-- http://schema.org/CreativeWork -->
+
+    <owl:Class rdf:about="http://schema.org/CreativeWork"/>
+    
+
+
+    <!-- http://schema.org/ImageObject -->
+
+    <owl:Class rdf:about="http://schema.org/ImageObject"/>
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <owl:Class rdf:about="http://schema.org/Person"/>
+    
+
+
+    <!-- http://www.w3.org/2000/10/swap/pim/contact#Person -->
+
+    <owl:Class rdf:about="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#Adult -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#Adult">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/age"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <owl:disjointWith rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#NonAdult"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#Antigen -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#Antigen">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTest"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#Baby -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#Baby">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/age"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#NonAdult"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#ChemicalSubstance"/>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#Child -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#Child">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/age"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</xsd:minInclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#NonAdult"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTest -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTest"/>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTestResult -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTestResult"/>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#DetachedHouse -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#DetachedHouse">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Place"/>
+        <owl:disjointWith rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#ResidentalBlock"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#HealthCondition"/>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#IndecisiveCovidTestResult -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#IndecisiveCovidTestResult">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTestResult"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#Infected -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#Infected">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Class>
+                                <owl:complementOf>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#hadCovidTest"/>
+                                        <owl:someValuesFrom rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTest"/>
+                                    </owl:Restriction>
+                                </owl:complementOf>
+                            </owl:Class>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#covidSymptomsOccured"/>
+                                <owl:allValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:oneOf>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </owl:oneOf>
+                                    </rdfs:Datatype>
+                                </owl:allValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#hadCovidTest"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTest"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#covidTestResult"/>
+                                        <owl:allValuesFrom rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#PositiveCovidTestResult"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#NegativeCovidTestResult -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#NegativeCovidTestResult">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTestResult"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#NonAdult -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#NonAdult">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#PCR -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#PCR">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTest"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#Patient -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#Patient">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#Place -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#Place"/>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#PlaceWithFullInformation -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#PlaceWithFullInformation">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Place"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#PositiveCovidTestResult -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#PositiveCovidTestResult">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTestResult"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#ResidentalBlock -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#ResidentalBlock">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Place"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#Teenager -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#Teenager">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/age"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</xsd:minInclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#NonAdult"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/kubajal/covidepid/releases/tag/covidepid#UnknownTestType -->
+
+    <owl:Class rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#UnknownTestType">
+        <rdfs:subClassOf rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#CovidTest"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/A00-B99"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/C00-D49"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/D50-D89"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/E00-E89"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/F01-F99"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/G00-G99"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/H00-H59"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/H60-H95"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/I00-I99"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/J00-J99"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/K00-K95"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/L00-L99"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/M00-M99"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/N00-N99"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/O00-O9A"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/P00-P96"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/Q00-Q99"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/R00-R99"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/S00-T88"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/U00-U85"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/V00-Y99"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/ICD10CM/Z00-Z99"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/A"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/B"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/C"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/D"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/G"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/H"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/J"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/L"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/M"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/N"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/P"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/R"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/S"/>
+            <rdf:Description rdf:about="http://purl.bioontology.org/ontology/UATC/V"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#Antigen"/>
+            <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#PCR"/>
+            <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#UnknownTestType"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#Baby"/>
+            <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#Child"/>
+            <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#Teenager"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#IndecisiveCovidTestResult"/>
+            <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#NegativeCovidTestResult"/>
+            <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#PositiveCovidTestResult"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#person">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#person1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#person2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://github.com/kubajal/covidepid/releases/tag/covidepid#place">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label>constraint adult</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                        <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/age"/>
+                                <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                                <swrl:argument2 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#y"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Adult"/>
+                        <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label>constraint child</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                        <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/age"/>
+                                <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                                <swrl:argument2 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#y"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Child"/>
+                        <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label>constraint teenager</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                        <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/age"/>
+                                <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                                <swrl:argument2 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#y"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Teenager"/>
+                        <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label>constraint toddler</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                        <swrl:arguments>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#y"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/age"/>
+                                <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                                <swrl:argument2 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                                        <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Baby"/>
+                        <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label>constraint patient age</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#Patient"/>
+                        <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/age"/>
+                                <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person"/>
+                                <swrl:argument2 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                        <swrl:arguments>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#x"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label>closure livesIn &amp; livesWith</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.org/vocab/relationship/livesWith"/>
+                        <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person1"/>
+                        <swrl:argument2 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#livesIn"/>
+                                <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person1"/>
+                                <swrl:argument2 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#place"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#livesIn"/>
+                        <swrl:argument1 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#person2"/>
+                        <swrl:argument2 rdf:resource="https://github.com/kubajal/covidepid/releases/tag/covidepid#place"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
