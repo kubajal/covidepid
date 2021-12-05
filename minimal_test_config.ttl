@@ -54,23 +54,7 @@ ja:MemoryDataset  rdfs:subClassOf  ja:RDFDataset .
     ja:defaultGraph       <#owlInferenceModel> .
 
 <#input> a ja:MemoryModel ;
-        # ja:content [ja:externalContent <../../../../covid-epid-python/patients.nt> ] ;
-        # ja:content [ja:externalContent <covid-epid-ontology/ontologies/ATC.nt> ] ;
-        # ja:content [ja:externalContent <covid-epid-ontology/ontologies/ICD10CM.nt> ] ;
-        # ja:content [ja:externalContent <covid-epid-ontology/ontologies/new_covidepid.owl> ] ;
-        # ja:content [ja:externalContent <covid-epid-ontology/ontologies/owl.nt> ] ;
-        # ja:content [ja:externalContent <covid-epid-ontology/ontologies/rdfs.nt> ] ;
-        # ja:content [ja:externalContent <covid-epid-ontology/ontologies/relationship_extended.nt> ] ;
-        # ja:content [ja:externalContent <covid-epid-ontology/ontologies/foaf.nt> ] .
         ja:content [ja:externalContent <covid-epid-ontology/minimal_test.ttl> ] .
-
-<#rulesInferenceModel> a ja:InfModel ;
-     ja:baseModel <#input> ;
-     ja:reasoner [
-        ja:rulesFrom <covid-epid-ontology/ontologies/rules.jena.txt> ;
-        ja:reasonerURL <http://jena.hpl.hp.com/2003/GenericRuleReasoner>
-     ]
-    .
 
 <#owlInferenceModel> a ja:InfModel ;
      ja:baseModel <#rulesInferenceModel> ;
