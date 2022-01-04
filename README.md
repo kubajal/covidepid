@@ -1,4 +1,4 @@
-# The *covidepid* ontology
+# Background
 
 This repository contains the [*covidepid*](covidepid.owl) ontology along with four external ontologies that the [*covidepid*](covidepid.owl) ontology integrates into a single domain data model:
 
