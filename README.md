@@ -20,6 +20,12 @@ For more information on the epidemiological study and the data model refer to my
 
 The image above depicts a part of the [covidepid](covidepid.owl) ontology that was relevant to my master's thesis. Each color depicts a different *domain*, each self-contained with a complex inner structure. Red color corresponds to social concepts, such as *Person* or the "*lives with*" relationship. Yellow color corresponds to the [ICD-10CM taxonomy](https://bioportal.bioontology.org/ontologies/ICD10CM) and (health conditions). Grey color corresponds to the [ATC taxonomy](https://bioportal.bioontology.org/ontologies/ATC) (pharmacology). Purple color is the core concept of the [*covidepid*](covidepid.owl) ontology that integrates those three domains into a single interdisciplinary data model.
 
+The ultimate goal of this data model is to enable complex cross-sections through the data. Examples of cross-sections that one might want to analyze are:
+
+ - does certain type of comorbidities influence COVID-19 severity? (if yes, return that type of comorbidities)
+ - does continous use of certain medicines influence COVID-19 severity? (if yes, return that type of medicines)
+ - are there any combinations of other factors that influence COVID-19 spread or COVID-19 severity?
+
 # covidepid.owl license
 
 [covidepid.owl](covidepid.owl) license: [GNU Public License 3](https://www.gnu.org/licenses/gpl-3.0.html). Copyright (C) 2021-2022 Jakub Jalowiec kuba.jal(at)gmail.com. For more information & citation refer to [this page](https://zenodo.org/record/5815012).
